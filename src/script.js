@@ -619,6 +619,9 @@ function importFromFile() {
         const file = e.target.files[0];
         if (!file) return;
         
+        // 关闭剪贴板导入窗口
+        closeClipboardImportModal();
+        
         const reader = new FileReader();
         reader.onload = function(e) {
             try {
